@@ -1,22 +1,51 @@
 # Enrollments
 
+(Martin Lejko, Samuel Koribanič, Daniel Lopata, David Petera, Matúš Klečka, Adam Budai)
+
+The system is designed to manage student enrollments, including signing up for courses, viewing enrolled subjects, signing off, managing waiting lists, and other related administrative tasks. It enables easy communication between students, teachers, and administrative departments.
+
 ## Core features and responsibilities
 
-### Feature 1: Student enrolling to a subject
+### Feature 1: Student Enrolling in a Subject (Daniel Lopata)
 
-As a student, I want to enroll to subject because I want to get credits.
+**User Story:**  
+As a student, I want to enrol in a subject because I want to get credits.  
 
-#### Breakdown
+#### Breakdown  
 
-- Student opens dashboard
-- Student selects subject enrollment button
-- Student filters out desired subject
-- Student selects desired subject and clicks enroll button
-- System checks prerequisities and capacity
-- If the subject capacity is full, student is not allowed to enroll
-- If the check is successful, student is informed about success and is enrolled to subject
+1. The student opens the dashboard.  
+2. The student selects the subject enrollment button.  
+3. The student filters out the desired subject.  
+4. The student selects the desired subject and clicks the enrol button.  
+5. System checks prerequisites and capacity.  
+6. If the subject's capacity is full, the student is not allowed to enrol and is informed.  
+7. If the check is successful, the student is informed about the success and is enrolled in the subject.  
 
-#### Responsibilities
+#### Responsibilities  
+
+##### **System Presentation**  
+- Display available subjects with relevant details.  
+- Allow filtering and searching for subjects by various criteria.  
+- Show feedback for successful or failed enrollment attempts.  
+
+##### **Enrollments Processing**  
+- Process enrollment requests by interacting with other modules.  
+- Update the subject's enrollment records upon successful enrollment.  
+- Handle enrollment state transitions, such as full capacity or pending prerequisites.  
+
+##### **Data Analysis Responsibilities**  
+- Track subject capacity in real-time to ensure accurate availability of information.  
+- Analyze and manage enrollments to provide information to system administrators.  
+
+##### **Validation Responsibilities**  
+- Verify that the student meets all prerequisites for the selected subject.  
+- Check if there is sufficient capacity in the subject before enrolling the student.  
+- Provide clear error messages and reasons for denied enrollment requests.  
+
+##### **Persistence Responsibilities**  
+- Store updated enrollment data in the database.  
+- Maintain records of all enrollments, including timestamps and student IDs.  
+- Ensure that subject capacities are correctly updated after every successful or failed enrollment attempt.  
 
 ### Feature 2: Study department checking prerequisites
 
@@ -61,25 +90,23 @@ As a student, I want to sign off the subject, because I do not have time for it.
 #### Responsibilities
 
 
-### Feature 4: Student Viewing Enrolled Subjects (Samo)
-As a student, I want to view my enrolled subjects to track my academic progress.
+### Feature 4: Student viewing Enrolled Subjects
 
-#### User-System Interaction Breakdown
-1. Student opens the dashboard.
-2. Student clicks the "My Enrollments" button.
-3. System displays a list of enrolled subjects with details (name, credits, status).
-4. Student can filter and search for specific subjects or view more detailed information.
-5. Student can display their results of the subject (grades, credit)
+As a student, I want to view my enrolled subjects, because I need to keep track of my academic progress and ensure Im meeting my degree requirements.
+
+#### Breakdown
+
+- Student opens dashboard.
+- Student selects the "My Enrollments" button.
+- System displays a list of all enrolled subjects.
+- Student can filter or search through the subjects if needed.
+- For each subject, student can see atleast:
+  - Subject name
+  - Credits
+  - Current status (active, completed, withdrawn)
+- Student can click on a subject to view more details, including course syllabus and grades (if available).
 
 #### Responsibilities
-##### System Presentation: 
-  - Display a list of enrolled subjects
-  - Display additional information of subjects
-  - Display the results of the subject
-
-##### Enrollment Processing:
-  - Provide search and filtering functionalities.
-
 
 ### Feature 5: Teacher notifying enrolled students
 
@@ -99,7 +126,7 @@ As a teacher, I want to send messages to whole group, because I want to give stu
 
 #### Responsibilities
 
-### Feature 6: Generating Statistical Reports for Subject Success Rates (Matúš Klečka)
+### Feature 6: Generating Statistical Reports for Subject Success Rates
 
 As a manager, I want to generate statistical reports, because I want to see success rates of the subject in time.
 
@@ -116,7 +143,7 @@ As a manager, I want to generate statistical reports, because I want to see succ
 
 #### Responsibilities
 
-### Feature 7: Joining a Waiting List for a Full Course (Martin Lejko)
+### Feature 7: Joining a Waiting List for a Full Course
 
 As a student, I want to join a waiting list if the capacity is full for the course I want to enroll in, because I still want a chance to get into the course if space becomes available.
 
@@ -134,28 +161,4 @@ As a student, I want to join a waiting list if the capacity is full for the cour
 - If space becomes available, system notifies the student that they are enrolled.
 
 #### Responsibilities
-
-##### System Presentation:
-
-* Provide a clear and intuitive user interface for viewing waiting list options  
-* Display real-time information about waiting list status  
-* Create seamless navigation for waiting list management  
-
-##### Enrollment Processing:
-
-* Automatically process waiting list when course spaces become available  
-* Efficiently transfer students from waiting list to course enrollment  
-* Maintain real-time synchronization of waiting list status  
-
-##### Data Analysis:
-
-* Track waiting list occupancy rates  
-* Provide insights for future course capacity planning  
-
-##### Validation:
-
-* Verify student eligibility for joining a waiting list  
-* Check student's academic standing and prerequisites   
-* Prevent duplicate waiting list entries for the same subject   
-
 
